@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Sample postman collection",
   "scripts": {
-    "test": "newman run -e SampleEnvironment.postman_environment.json SampleCollection.postman_collection.json -r cli,html"
+    "test_api_production": "newman run -e SampleEnvironment.postman_environment.json SampleCollection.postman_collection.json -r cli,html",
+    "test_api_mockserver": "newman run -e MockCollection.postman_environment.json SampleCollection.postman_collection.json -r cli,html"
   },
   "author": "Dennis Pagalla"
 }
