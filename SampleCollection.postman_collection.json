@@ -14,7 +14,7 @@
 						"id": "d1c195d5-5750-4630-85cc-bdc9cd9d4d90",
 						"exec": [
 							"var last_name = pm.response.json()",
-							"if(last_name.data.last_name ==\"Holt\"){",
+							"if(last_name.data.last_name ==\"Pagalla\"){",
 							"    console.log(\"User found\")",
 							"}else{",
 							"    postman.setNextRequest(\"Single User\")",
@@ -61,8 +61,8 @@
 						"id": "d1c195d5-5750-4630-85cc-bdc9cd9d4d90",
 						"exec": [
 							"",
-							"pm.test(\"Body matches 14-4811\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"14-4811\");",
+							"pm.test(\"Body matches 17-2031\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"17-2031\");",
 							"});"
 						],
 						"type": "text/javascript"
