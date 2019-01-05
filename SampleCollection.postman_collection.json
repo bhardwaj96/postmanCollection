@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "c4775f14-4c0f-43c0-8336-2c5846bbae3f",
+		"name": "SampleCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Single User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d1c195d5-5750-4630-85cc-bdc9cd9d4d90",
+						"exec": [
+							"var last_name = pm.response.json()",
+							"if(last_name.data.last_name ==\"Holt\"){",
+							"    console.log(\"User found\")",
+							"}else{",
+							"    postman.setNextRequest(\"Single User\")",
+							"    var id = pm.environment.get(\"id\")",
+							"    console.log(\"id is : \"+id++)",
+							"    pm.environment.set(\"id\",id++)",
+							"    console.log(\"updated id is : \"+pm.environment.get(\"id\"))",
+							"}",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/users/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d1c195d5-5750-4630-85cc-bdc9cd9d4d90",
+						"exec": [
+							"",
+							"pm.test(\"Body matches 14-4811\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"14-4811\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/unknown/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"unknown",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
