@@ -15,7 +15,7 @@
 						"id": "d1c195d5-5750-4630-85cc-bdc9cd9d4d90",
 						"exec": [
 							"var last_name = pm.response.json()",
-							"if(last_name.data.last_name ==\"Pagalla\"){",
+							"if(last_name.data.last_name == pm.environment.get(\"last_name\")){",
 							"    console.log(\"User found\")",
 							"}else{",
 							"    postman.setNextRequest(\"Single User\")",
@@ -323,9 +323,11 @@
 						"id": "d1c195d5-5750-4630-85cc-bdc9cd9d4d90",
 						"exec": [
 							"",
-							"pm.test(\"Body matches 15-4020\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"15-4020\");",
-							"});"
+							"pm.test(\"Body matches \"+pm.environment.get(\"pantone_value\"), function () {",
+							"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"pantone_value\"));",
+							"});",
+							"",
+							""
 						],
 						"type": "text/javascript"
 					}
