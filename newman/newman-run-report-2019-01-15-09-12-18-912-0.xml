@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="SampleCollection" tests="2" time="2.406">
+  <testsuite name="Single User" id="0e7573a1-13f4-430c-810b-0d9f670dce2a" tests="0" failures="0" errors="1" time="2.169">
+    <error>
+      <![CDATA[Iteration: 0
+
+---
+testScriptError: Cannot read property 'last_name' of undefined
+---
+]]>
+    </error>
+  </testsuite>
+  <testsuite name="Get User Details" id="b27d258e-aaac-4df2-9a5f-77344562caa4" tests="1" failures="1" errors="0" time="0.237">
+    <testcase name="Body matches 17-2031" time="0.237" classname="Get User Details">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c4775f14-4c0f-43c0-8336-2c5846bbae3f.]]>
+        <![CDATA[Collection name: SampleCollection.]]>
+        <![CDATA[Request name: Get User Details.]]>
+        <![CDATA[Test description: Body matches 17-2031.]]>
+        <![CDATA[Error message: expected '{"error":{"name":"mockNotFoundError","message":"We couldn\'t find the mock you are trying to access. Please verify that the mock exists by refreshing your mocks list."}}' to include '17-2031'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected '{"error":{"name":"mockNotFoundError","message":"We couldn\'t find the mock you are trying to access. Please verify that the mock exists by refreshing your mocks list."}}' to include '17-2031'
+   at Object.eval sandbox-script.js:1:2).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+</testsuites>
